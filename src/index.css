@@ -1,0 +1,255 @@
+@import "tailwindcss";
+
+/* ===== Onyx & Champagne Minimal Luxury Palette ===== */
+:root {
+  --bg-base:        #0A0A0C;
+  --bg-card:        #1C1B1F;
+  --champagne-light:#EDE3D0;
+  --champagne:      #C9B896;
+  --champagne-deep: #8F8066;
+  --text-primary:   #F3F1EC;
+  --text-secondary: rgba(243, 241, 236, 0.6);
+
+  /* Mapping legacy color bindings for seamless champagne integration */
+  --gold-light:     #EDE3D0;
+  --gold:           #C9B896;
+  --gold-deep:      #8F8066;
+  --sapphire:       #8F8066;
+  --sapphire-light: #C9B896;
+  --silver:         #EDE3D0;
+}
+
+@layer utilities {
+  .font-arabic {
+    font-family: 'Amiri', serif;
+  }
+  .font-tamil, .font-anek {
+    font-family: 'Anek Tamil', sans-serif;
+  }
+  .font-sinhala {
+    font-family: 'Gemunu Libre', sans-serif;
+  }
+  .font-outfit {
+    font-family: 'Anek Tamil', 'Outfit', sans-serif;
+  }
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+  .font-jakarta {
+    font-family: 'Anek Tamil', 'Plus Jakarta Sans', sans-serif;
+  }
+
+  /* Text Highlights & Hero styling */
+  .text-gradient-gold, .text-highlight {
+    background: linear-gradient(90deg, var(--champagne-light), var(--champagne) 60%, var(--champagne-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+  }
+
+  .text-hero-countdown {
+    color: var(--champagne-light);
+    text-shadow: 0 0 12px rgba(201, 184, 150, 0.25);
+  }
+
+  .text-hero {
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--champagne-light);
+    text-shadow: 0 0 20px rgba(201, 184, 150, 0.25);
+  }
+
+  .text-secondary {
+    color: var(--text-secondary);
+  }
+
+  .text-primary-strong {
+    color: var(--text-primary);
+    font-weight: 500;
+  }
+
+  /* Color mapping overrides for Tailwind utility colors */
+  .text-\[\#5B8DEF\], .text-\[\#D4AF6A\], .text-\[\#F2D9A8\] {
+    color: #C9B896;
+  }
+}
+
+/* Force default font to Anek Tamil everywhere */
+* {
+  font-family: 'Anek Tamil', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+/* ===== App Background (Onyx base + champagne radial mesh + repeating Islamic pattern overlay) ===== */
+body, .app-bg, .bg-premium-dark {
+  min-height: 100vh;
+  color: var(--text-primary);
+  background-color: #0A0A0C;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(201, 184, 150, 0.16) 0%, transparent 40%),
+    radial-gradient(circle at 85% 90%, rgba(42, 38, 32, 0.7) 0%, transparent 50%),
+    linear-gradient(180deg, #0A0A0C 0%, #060607 100%);
+  background-attachment: fixed;
+  position: relative;
+  overflow-x: hidden;
+}
+
+body::before, .app-bg::before {
+  display: none;
+}
+
+.your-main-content-wrapper, .app-content {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Glass Card & Panel ===== */
+.glass-card, .glass-panel {
+  position: relative;
+  background: linear-gradient(135deg, rgba(28, 27, 31, 0.85), rgba(28, 27, 31, 0.6));
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-radius: 22px;
+  border: 1px solid rgba(201, 184, 150, 0.22);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+/* ===== Glass Chips & Pills ===== */
+.glass-chip, .glass-pill {
+  background: rgba(28, 27, 31, 0.45);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(243, 241, 236, 0.12);
+  border-radius: 14px;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.glass-chip:hover, .glass-pill:hover {
+  background: rgba(28, 27, 31, 0.65);
+  border-color: rgba(243, 241, 236, 0.22);
+}
+
+.glass-chip:active, .glass-pill:active {
+  transform: scale(0.97);
+}
+
+/* ===== Glass Nav Bar ===== */
+.glass-nav {
+  background: rgba(10, 10, 12, 0.65);
+  backdrop-filter: blur(28px) saturate(160%);
+  -webkit-backdrop-filter: blur(28px) saturate(160%);
+  border-top: 1px solid rgba(243, 241, 236, 0.12);
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* ===== Glass Button Champagne ===== */
+.glass-btn-champagne, .glass-btn-accent, .glass-btn-gold, .glass-gold {
+  background: linear-gradient(135deg, rgba(237, 227, 208, 0.18), rgba(201, 184, 150, 0.12));
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border: 1px solid rgba(201, 184, 150, 0.32);
+  border-radius: 14px;
+  color: var(--champagne-light);
+  padding: 0.65rem 1.3rem;
+  font-weight: 500;
+  transition: transform 0.15s ease, background 0.15s ease;
+  cursor: pointer;
+}
+
+.glass-btn-champagne:hover, .glass-btn-accent:hover, .glass-btn-gold:hover, .glass-gold:hover {
+  background: linear-gradient(135deg, rgba(237, 227, 208, 0.26), rgba(201, 184, 150, 0.18));
+  border-color: rgba(201, 184, 150, 0.45);
+}
+
+.glass-btn-champagne:active, .glass-btn-accent:active, .glass-btn-gold:active, .glass-gold:active {
+  background: linear-gradient(135deg, rgba(237, 227, 208, 0.32), rgba(201, 184, 150, 0.24));
+  transform: scale(0.97);
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .glass-card, .glass-panel { background: rgba(28, 27, 31, 0.92); }
+  .glass-chip, .glass-pill { background: rgba(28, 27, 31, 0.82); }
+  .glass-nav  { background: rgba(10, 10, 12, 0.94); }
+  .glass-btn-champagne, .glass-btn-accent, .glass-btn-gold, .glass-gold { background: rgba(201, 184, 150, 0.28); }
+}
+
+/* Custom scrollbar in champagne theme */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 184, 150, 0.25);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 184, 150, 0.5);
+}
+
+/* Pulse ring effect */
+@keyframes compassPulse {
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.05); opacity: 0.5; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
+
+.animate-compass-pulse {
+  animation: compassPulse 3s infinite ease-in-out;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Smooth red blink animation */
+@keyframes smoothRedBlink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(239, 68, 68, 0.9);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.88);
+    box-shadow: 0 0 3px rgba(239, 68, 68, 0.3);
+  }
+}
+
+@keyframes smoothRedHalo {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.animate-smooth-red-blink {
+  animation: smoothRedBlink 1.4s infinite ease-in-out;
+}
+
+.animate-smooth-red-halo {
+  animation: smoothRedHalo 1.8s infinite cubic-bezier(0, 0, 0.2, 1);
+}
+
+
+
+

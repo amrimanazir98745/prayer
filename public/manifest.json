@@ -1,0 +1,40 @@
+{
+  "short_name": "Prayer Times SL",
+  "name": "Sri Lanka Prayer Times & Qibla",
+  "icons": [
+    {
+      "src": "/islamic-pattern.svg",
+      "type": "image/svg+xml",
+      "sizes": "192x192 512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "scope": "/",
+  "background_color": "#0A0A0C",
+  "theme_color": "#0A0A0C",
+  "display": "standalone",
+  "orientation": "portrait",
+  "description": "Sri Lanka 100% Offline Prayer Times, Qibla Compass, Hijri Calendar, Tasbih & Duas",
+  "categories": ["utilities", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Prayer Schedule",
+      "short_name": "Schedule",
+      "url": "/?tab=today",
+      "icons": [{ "src": "/islamic-pattern.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Qibla Compass",
+      "short_name": "Qibla",
+      "url": "/?tab=qibla",
+      "icons": [{ "src": "/islamic-pattern.svg", "sizes": "192x192" }]
+    },
+    {
+      "name": "Digital Tasbih",
+      "short_name": "Tasbih",
+      "url": "/?tab=tasbih",
+      "icons": [{ "src": "/islamic-pattern.svg", "sizes": "192x192" }]
+    }
+  ]
+}

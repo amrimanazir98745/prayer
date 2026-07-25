@@ -1,0 +1,10 @@
+{
+  "name": "Remix: Remix: Sri Lanka Prayer Times \u0026 Qibla",
+  "description": "Comprehensive Islamic prayer schedule, adhan notifications, Qibla compass, and monthly calendar for Sri Lanka districts.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
